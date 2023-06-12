@@ -1,1 +1,1 @@
-# Capstone-Project---VSC
+# Capstone-Project-Voting Smart Contract

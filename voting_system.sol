@@ -3,7 +3,7 @@ pragma solidity >=0.7.0 <0.9.0;
 contract Voting {
 
 //This defines two struct types: Voter and Proposal. Voter represents a voter and contains information about whether they have voted or not.
-Proposal represents a proposal and contains the name of the proposal and the number of votes it has received.
+//Proposal represents a proposal and contains the name of the proposal and the number of votes it has received.
    struct Voter {
         bool hasVoted;
         uint votedProposalIndex;
@@ -23,7 +23,7 @@ Proposal represents a proposal and contains the name of the proposal and the num
     State public state;
 
 //This defines two custom modifiers: onlyChairperson and inState. The onlyChairperson modifier checks whether the caller of a function is 
-the chairperson address. The inState modifier checks whether the current state of the contract matches the state that was said as an argument.
+//the chairperson address. The inState modifier checks whether the current state of the contract matches the state that was said as an argument.
     
     modifier onlyChairperson() {
         require(msg.sender == chairperson, "Only the chairperson can perform this action");
@@ -57,8 +57,8 @@ the chairperson address. The inState modifier checks whether the current state o
     }
 
 //This allows a registered voter to cast their vote for a specific proposal indicated by its proposalIndex. 
-It ensures that the voter has not already voted and that the proposalIndex is valid. It basically safe proofs the voting process and it
-won't allow someone to vote twice.
+//It ensures that the voter has not already voted and that the proposalIndex is valid. It basically safe proofs the voting process and it
+//won't allow someone to vote twice.
 
     function vote(uint proposalIndex) public inState(State.Voting) {
         Voter storage voter = voters[msg.sender];
